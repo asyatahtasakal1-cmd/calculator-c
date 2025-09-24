@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    char op;
+    double num1, num2, result;
+
+    printf("Hesap Makinesi\n");
+    printf("İşlem seçin (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    printf("Birinci sayıyı girin: ");
+    scanf("%lf", &num1);
+    printf("İkinci sayıyı girin: ");
+    scanf("%lf", &num2);
+
+    switch (op) {
+        case '+':
+            result = num1 + num2;
+            printf("Sonuç: %.2lf\n", result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("Sonuç: %.2lf\n", result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("Sonuç: %.2lf\n", result);
+            break;
+        case '/':
+            if (num2 != 0)
+                result = num1 / num2;
+            else
+                printf("Hata: Sıfıra bölme yapılamaz!\n");
+            printf("Sonuç: %.2lf\n", result);
+            break;
+        default:
+            printf("Geçersiz işlem!\n");
+    }
+
+    return 0;
+}
